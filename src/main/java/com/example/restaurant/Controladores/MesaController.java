@@ -30,7 +30,7 @@ public class MesaController {
     @Autowired
     private MesaMapper mesaMapper;
 
-    @GetMapping
+    @GetMapping("/mostrar")
     public ResponseEntity<List<MesaDto>> obtenerMesas() {
         List<Mesa> mesas = mesaService.showList();
         List<MesaDto> mesasDto = mesas.stream().map(mesaMapper::toDTO).collect(Collectors.toList());
